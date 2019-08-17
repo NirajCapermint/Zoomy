@@ -160,6 +160,26 @@
                                             <segue destination="A4L-72-L22" kind="show" id="cK7-kR-iOP"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Z5Z-g3-Pud" style="IBUITableViewCellStyleDefault" id="xR5-Nz-ge9">
+                                        <rect key="frame" x="0.0" y="308" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xR5-Nz-ge9" id="ZGo-Ns-vbp">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z5Z-g3-Pud">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="jJL-4p-03h" kind="show" id="45P-KS-S10"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -706,6 +726,40 @@
             </objects>
             <point key="canvasLocation" x="-812" y="484"/>
         </scene>
+        <!--Subviews Example View Controller-->
+        <scene sceneID="lxC-z2-YcR">
+            <objects>
+                <viewController id="jJL-4p-03h" customClass="SubviewsExampleViewController" customModule="Zoomy_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Srd-m2-Bk8"/>
+                        <viewControllerLayoutGuide type="bottom" id="ucT-f4-Hhm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ehe-W3-rDd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trees_7" translatesAutoresizingMaskIntoConstraints="NO" id="fuY-Xg-Egk">
+                                <rect key="frame" x="0.0" y="52" width="375" height="563"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fuY-Xg-Egk" secondAttribute="height" multiplier="1333:2000" id="fyr-2a-QVW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fuY-Xg-Egk" firstAttribute="leading" secondItem="ehe-W3-rDd" secondAttribute="leading" id="RmR-ir-K6U"/>
+                            <constraint firstAttribute="trailing" secondItem="fuY-Xg-Egk" secondAttribute="trailing" id="toa-v8-LdP"/>
+                            <constraint firstItem="fuY-Xg-Egk" firstAttribute="centerY" secondItem="ehe-W3-rDd" secondAttribute="centerY" id="wNZ-h8-Hni"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="fuY-Xg-Egk" id="e4y-Rd-ShD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dDI-ck-Dbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4220" y="475"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Colorfull_2" width="2453.333251953125" height="1637.3333740234375"/>
@@ -713,5 +767,6 @@
         <image name="Trees_3" width="1330.6666259765625" height="747.33331298828125"/>
         <image name="Trees_4" width="1152.6666259765625" height="862"/>
         <image name="Trees_5" width="2048" height="1536"/>
+        <image name="Trees_7" width="2666" height="4000"/>
     </resources>
 </document>
