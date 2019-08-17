@@ -35,6 +35,8 @@ extension ImageZoomControllerIsNotPresentingOverlayState: ImageZoomControllerSta
             owner.backgroundView.autoPinEdgesToSuperviewEdges()
         }
         
+        owner.delegate?.overlayImageViewWillAppear(owner.overlayImageView)
+        
         if let topMostView = owner.topmostView {
             view.insertSubview(owner.overlayImageView, belowSubview: topMostView)
         } else {

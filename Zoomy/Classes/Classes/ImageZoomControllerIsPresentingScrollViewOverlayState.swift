@@ -45,6 +45,7 @@ extension ImageZoomControllerIsPresentingScrollViewOverlayState: ImageZoomContro
                 let containerView = owner.containerView,
                 let dominantBouncingSide = dominantBouncingDirection else { return }
         
+        owner.delegate?.overlayImageViewWillAppear(owner.overlayImageView)
         if let topmostView = owner.topmostView {
             containerView.insertSubview(owner.overlayImageView, belowSubview: topmostView)
         } else {
@@ -55,6 +56,7 @@ extension ImageZoomControllerIsPresentingScrollViewOverlayState: ImageZoomContro
         
         owner.state = IsHandlingScrollViewBounceTriggeredDismissalState(owner: owner, translationDirection: dominantBouncingSide)
         
+        owner.delegate?.scrollableImageViewWillDisappear(owner.scrollableImageView)
         owner.scrollableImageView.alpha = 0
     }
     
@@ -70,6 +72,7 @@ extension ImageZoomControllerIsPresentingScrollViewOverlayState: ImageZoomContro
             owner.scrollView.zoomScale = owner.minimumZoomScale
             owner.scrollView.frame = absoluteFrameOfImageView
         }) {
+            owner.delegate?.scrollableImageViewWillDisappear(owner.scrollableImageView)
             owner.reset()
             owner.configureImageView()
             owner.delegate?.didEndPresentingOverlay(for: imageView)

@@ -177,6 +177,8 @@ private extension ImageZoomControllerIsPresentingImageViewOverlayState {
         
         owner.scrollView.addSubview(owner.scrollableImageView)
         
+        owner.delegate?.scrollableImageViewWillAppear(owner.scrollableImageView)
+        
         if let topmostView = owner.topmostView {
             containerView.insertSubview(owner.scrollView, belowSubview: topmostView)
         } else {
@@ -239,6 +241,7 @@ private extension ImageZoomControllerIsPresentingImageViewOverlayState {
         guard let owner = owner else { return }
         
         owner.scrollView.pinchGestureRecognizer?.isEnabled = true
+        owner.delegate?.overlayImageViewWillDisappear(owner.overlayImageView)
         owner.resetOverlayImageView()
         owner.state = IsPresentingScrollViewOverlayState(owner: owner)
     }
